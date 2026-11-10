@@ -25,3 +25,8 @@ release tag. For a smaller build, see et/carpet-stack and et/carpetx-stack.
 """
 contact = "https://github.com/EinsteinToolkit/tickets/issues"
 thornlist = "einsteintoolkit.th"
+# If this file moves into the official manifest repo
+# (https://bitbucket.org/einsteintoolkit/manifest.git), its own release tags cut the releases.
+# Those are ET_YYYY_MM_vN, not vX.Y.Z, so it would need this rule (ET_2026_05_v0 is 2026.5.0):
+# tag-pattern = "ET_{major}_{minor}_v{patch}"
+# since = "2026.5.0"
