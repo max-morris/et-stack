@@ -1,0 +1,35 @@
+# The Cactarium stack et/et-stack: the official Einstein Toolkit releases. The name avoids a
+# clash with a package of the same name under et.
+#
+# Releases come only from tags. This commit is the release ET_2026_05_v0, tagged v2026.5.0:
+# einsteintoolkit.th is the official manifest's thornlist, byte for byte, at the manifest tag
+# ET_2026_05_v0 (https://bitbucket.org/einsteintoolkit/manifest.git), the file `cactup install`
+# reads for that release. The ET release ET_YYYY_MM_vN is version YYYY.M.N on the default track,
+# cut by the git tag vYYYY.M.N.
+#
+# The thornlist names every repo by its ET_2026_05 release branch. pin-tag pins each repo at its
+# ET_2026_05_v0 tag, the release as announced. Cottonmouth carries no tags, so it is pinned below
+# to the commit its ET_2026_05 branch had when the release was tagged (still its tip today).
+#
+# The branch master does not stay here: the next commit replaces this with the manifest's master,
+# so et/et-stack@head and @master follow the manifest's master like `cactup install master`.
+format = 1
+
+[stack]
+name = "et-stack"
+owners = ["et"]
+description = """
+The Einstein Toolkit release ET_2026_05, as the official manifest defines it.
+
+Every thorn the release builds, every repo pinned at its ET_2026_05_v0 tag. For a smaller build, \
+see et/carpet-stack and et/carpetx-stack.
+"""
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+thornlist = "einsteintoolkit.th"
+pin-tag = "ET_2026_05_v0"
+
+[[stack.pin]]
+name = "Cottonmouth"
+url = "https://github.com/EinsteinToolkit/Cottonmouth"
+ref = "ET_2026_05"
+commit = "7b3a6b19bb6278d7ae9205bce817042c253a9591"
